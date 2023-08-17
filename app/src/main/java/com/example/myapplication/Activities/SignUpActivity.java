@@ -1,6 +1,4 @@
-package com.example.myapplication.Activities;
-
-import static android.content.ContentValues.TAG;
+package com.example.myapplication.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -37,6 +35,11 @@ public class SignUpActivity extends AppCompatActivity {
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         preferenceManager = new PreferenceManager(getApplicationContext());
+        if(preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)){
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
         setListeners();
     }
     private void setListeners() {
@@ -131,7 +134,7 @@ public class SignUpActivity extends AppCompatActivity {
         } else if (binding.inputConfirmPassword.getText().toString().trim().isEmpty()) {
             showToast("Confirm password");
             return false;
-        } else if (!binding.inputConfirmPassword.getText().toString().matches(binding.inputPassword.toString())) {
+        } else if (!binding.inputConfirmPassword.getText().toString().equals(binding.inputPassword.getText().toString())) {
             showToast("Password doesn't match");
             return false;
         }

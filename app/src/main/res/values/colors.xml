@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background_color">#F9F5F6</color>
-    <color name="text_background">#F8E8EE</color>
-    <color name="dark_text_background">#301E67</color>
-    <color name="secondary">#2B2730</color>
-    <color name="dark_background">#03001C</color>
+    <color name="background_color">#efefef</color>
+    <color name="received_message_background">#efefef</color>
+    <color name="sent_message_background">#F1666d</color>
     <color name="primary">#FF000000</color>
+    <color name="secondary">#2B2730</color>
     <color name="theme"> #F49BBF</color>
 </resources>

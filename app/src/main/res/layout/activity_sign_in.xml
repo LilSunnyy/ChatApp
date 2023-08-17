@@ -9,7 +9,7 @@
     android:padding="@dimen/_24sdp"
     android:background="@drawable/signup_background"
     android:scrollbars="none"
-    tools:context=".Activities.SignInActivity">
+    tools:context=".activities.SignInActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,6 +45,7 @@
             android:layout_marginTop="@dimen/_15sdp"
             android:background="@drawable/background_input"
             android:hint="Password"
+            android:inputType="textPassword"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:paddingStart="@dimen/_16sdp"
@@ -52,15 +53,27 @@
             android:textColor="@color/primary"
             android:textSize="@dimen/_13ssp">
         </EditText>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:layout_marginTop="@dimen/_20sdp">
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonSignIn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
-            android:layout_marginTop="@dimen/_20sdp"
             android:text="@string/sign_in"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             app:cornerRadius="@dimen/_8sdp"/>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_gravity="center">
+            </ProgressBar>
+        </FrameLayout>
         <TextView
             android:id="@+id/txtCreateNewAccount"
             android:layout_width="wrap_content"
@@ -70,6 +83,5 @@
             android:textSize="@dimen/_13sdp"
             android:textColor="@color/secondary"
             android:textStyle="bold"/>
-
     </LinearLayout>
 </ScrollView>
